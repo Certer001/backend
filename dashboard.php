@@ -17,11 +17,11 @@ if (!$pdo) {
 
 // Получение информации о пользователе
 $user_id = $_SESSION['user_id'];
-$query = "SELECT role FROM users WHERE id = :id"; // Подготовленный запрос
-$stmt = $pdo->prepare($query); // Подготовка запроса
-$stmt->bindParam(':id', $user_id, PDO::PARAM_INT); // Привязка параметра
-$stmt->execute(); // Выполнение запроса
-$user = $stmt->fetch(PDO::FETCH_ASSOC); // Извлечение ассоциативного массива
+// $query = "SELECT role FROM employes WHERE id = :id"; // Подготовленный запрос
+// $stmt = $pdo->prepare($query); // Подготовка запроса
+// $stmt->bindParam(':id', $user_id, PDO::PARAM_INT); // Привязка параметра
+// $stmt->execute(); // Выполнение запроса
+// $user = $stmt->fetch(PDO::FETCH_ASSOC); // Извлечение ассоциативного массива
 
 // Проверка, есть ли у пользователя роль
 // if (!$user || empty($user['role'])) {
@@ -31,7 +31,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC); // Извлечение ассоциат
 // }
 
 // Проверка роли
-$isAdmin = ($user['role'] === 'admin');
+// $isAdmin = ($user['role'] === 'admin');
 ?>
 
 <!DOCTYPE html>
@@ -45,9 +45,9 @@ $isAdmin = ($user['role'] === 'admin');
     <h1>Добро пожаловать в ваш личный кабинет!</h1>
     <p>Вы успешно вошли в систему.</p>
 
-    <?php if ($isAdmin): ?>
+    <!-- // if ($isAdmin): -->
         <a href="news.php" class="button">Управление новостями</a>
-    <?php endif; ?>
+     <!-- endif; -->
 
     <a href="index.php">Вернуться на главную</a>
     <a href="logout.php" class="button">Выйти</a>
